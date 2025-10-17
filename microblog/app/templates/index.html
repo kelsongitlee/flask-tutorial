@@ -1,0 +1,31 @@
+<!-- 
+1. messy code
+<!doctype html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog!</title>
+        {% endif %}        
+    </head>
+    <body>
+        <h1>Hello, {{ user.username }}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+    </body>
+</html> -->
+
+<!-- 2. templetes -->
+<!-- base.html is the base template that will be used for all the pages -->
+{% extends "base.html" %}
+
+<!-- content block is the content that will be displayed on the page -->
+{% block content %}
+    <h1>Hi, {{ user.username }}!</h1>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}
+
